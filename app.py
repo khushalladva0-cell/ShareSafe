@@ -15,7 +15,9 @@ app = Flask(__name__)
 
 
 # MongoDB Connection
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient(
+    os.environ.get("MONGODB_URI")
+)
 db = client["sharesafe"]
 files_collection = db["files"]
 
@@ -26,7 +28,7 @@ cipher = Fernet(FERNET_KEY)
 
 # token genration 
 def generate_token():
-    chars = string.ascii_uppercase + string.digits
+    chars = string.ascii_uppercase + string.digit
     return ''.join(random.choices(chars, k=7))
 
 # password genration 
