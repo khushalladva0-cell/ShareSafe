@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download File - ShareSafe</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0A192F;
+color:white;
+min-height:100vh;
+}
+
+.navbar{
+background:#112240;
+padding:20px;
+text-align:center;
+}
+
+.logo{
+font-size:35px;
+font-weight:bold;
+color:#64FFDA;
+}
+
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+min-height:80vh;
+}
+
+.download-card{
+background:#112240;
+width:100%;
+max-width:700px;
+padding:35px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.download-card h1{
+text-align:center;
+margin-bottom:30px;
+}
+
+.info-row{
+background:#0A192F;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+}
+
+.label{
+color:#64FFDA;
+font-weight:bold;
+}
+
+.download-btn{
+display:block;
+width:100%;
+padding:18px;
+margin-top:25px;
+background:#64FFDA;
+color:#0A192F;
+text-align:center;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+border-radius:10px;
+}
+
+.download-btn:hover{
+opacity:.9;
+}
+
+.home-btn{
+display:block;
+text-align:center;
+margin-top:20px;
+color:#64FFDA;
+text-decoration:none;
+}
+
+.status-active{
+color:#00ff88;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">ShareSafe</div>
+</header>
+
+<div class="container">
+
+<div class="download-card">
+
+<h1>File Details</h1>
+
+<div class="info-row">
+<span class="label">File Name:</span>
+{{ file_name }}
+</div>
+
+<div class="info-row">
+<span class="label">Status:</span>
+<span class="status-active">{{ status }}</span>
+</div>
+
+<div class="info-row">
+<span class="label">Expiry Date:</span>
+{{ expiry_date }}
+</div>
+
+<div class="info-row">
+<span class="label">Remaining Time:</span>
+{% if status == "expired" %}
+Expired
+{% else %}
+Active
+{% endif %}
+</div>
+
+<div class="info-row">
+<span class="label">Download Count:</span>
+{{ download_count }}
+</div>
+
+<a href="/download-file/{{ token }}" class="btn">
+⬇ Download File
+</a>
+
+<a href="home" class="home-btn">
+← Back Home
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShareSafe - Upload. Protect. Share.</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0A192F;
+    color:white;
+}
+
+/* Navbar */
+
+.navbar{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.logo{
+    color:#64FFDA;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.tagline{
+    color:#CCD6F6;
+    margin-top:8px;
+    font-size:15px;
+    letter-spacing:1px;
+}
+
+/* Hero */
+
+.hero{
+    min-height:60vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:auto;
+    color:#CCD6F6;
+    font-size:18px;
+    line-height:1.7;
+}
+
+.button-group{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    margin:8px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#64FFDA;
+    color:#0A192F;
+}
+
+.btn-secondary{
+    background:#112240;
+    color:white;
+    border:1px solid #64FFDA;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Features */
+
+.features{
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:35px;
+}
+
+.feature-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.feature-card{
+    background:#112240;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.feature-card h3{
+    color:#64FFDA;
+    margin-bottom:15px;
+}
+
+/* How It Works */
+
+.how-it-works{
+    padding:80px 20px;
+}
+
+.steps{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.step-card{
+    background:#112240;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+/* CTA */
+
+.cta{
+    background:#112240;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.cta h2{
+    margin-bottom:25px;
+}
+
+/* Footer */
+
+.footer{
+    text-align:center;
+    padding:40px 20px;
+    color:#CCD6F6;
+}
+
+.footer-links{
+    margin:15px 0;
+}
+
+.footer-links a{
+    color:#CCD6F6;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    color:#64FFDA;
+}
+.developer-box{
+    max-width:700px;
+    margin:50px auto;
+    background:#112240;
+    border:1px solid #64FFDA;
+    border-radius:15px;
+    padding:25px;
+    text-align:left;
+    color:white;
+    box-shadow:0 0 15px rgba(100,255,218,0.2);
+}
+
+.developer-box h2{
+    color:#64FFDA;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.developer-box p{
+    margin:12px 0;
+    font-size:18px;
+}
+
+.developer-box strong{
+    color:#64FFDA;
+}
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:38px;
+}
+
+.logo{
+    font-size:32px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header class="navbar">
+
+    <h1 class="logo">ShareSafe</h1>
+
+    <p class="tagline">
+        Upload. Protect. Share.
+    </p>
+
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <h1>Secure File Sharing Made Simple</h1>
+
+    <p>
+        Share files securely with password protection,
+        expiry control and encrypted storage.
+        No login required.
+    </p>
+
+   
+<div class="button-group">
+
+    <a href="share" class="btn btn-primary">
+        Share File
+    </a>
+
+    <a href="receive" class="btn btn-secondary">
+        Receive File
+    </a>
+
+    <a href="myfiles" class="btn btn-secondary">
+        My Shared Files
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section class="features">
+
+<h2 class="section-title">
+Why Choose ShareSafe?
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+    <h3>🔒 Password Protected Files</h3>
+    <p>
+        Protect every shared file with a secure password.
+    </p>
+</div>
+
+<div class="feature-card">
+    <h3>⏰ Expiry Time Control</h3>
+    <p>
+        Automatically expire download links after selected time.
+    </p>
+</div>
+
+<div class="feature-card">
+    <h3>🔗 Secure Download Links</h3>
+    <p>
+        Randomized secure links for maximum protection.
+    </p>
+</div>
+
+<div class="feature-card">
+    <h3>🛡 Encrypted Storage</h3>
+    <p>
+        Files are securely stored using encryption techniques.
+    </p>
+</div>
+
+</div>
+
+</section>
+
+<!-- How It Works -->
+
+<section class="how-it-works">
+
+<h2 class="section-title">
+How ShareSafe Works
+</h2>
+
+<div class="steps">
+
+<div class="step-card">
+    <h3>1. Upload File</h3>
+    <p>Select file and choose expiry time.</p>
+</div>
+
+<div class="step-card">
+    <h3>2. Protect File</h3>
+    <p>Generate secure password protected link.</p>
+</div>
+
+<div class="step-card">
+    <h3>3. Share Securely</h3>
+    <p>Send link and password to recipient.</p>
+</div>
+
+</div>
+
+</section>
+<div class="developer-box">
+    <h2>Project Information</h2>
+
+    <p><strong>Project:</strong> ShareSafe</p>
+    <p><strong>Developer:</strong> Ladva Khushal Gopalbhai</p>
+    <p><strong>Enrollment No:</strong> 246120307030</p>
+    <p><strong>Email:</strong> khushalladva0@gmail.com</p>
+</div>
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready To Share Securely?</h2>
+
+<a href="share" class="btn btn-primary">
+    Start Sharing Now
+</a>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer class="footer">
+
+<h3>ShareSafe</h3>
+
+<p>Upload. Protect. Share.</p>
+
+<div class="footer-links">
+
+<a href="#">About</a>
+
+<a href="#">Privacy Policy</a>
+
+<a href="#">Contact</a>
+
+</div>
+
+<p>
+© 2026 ShareSafe. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>

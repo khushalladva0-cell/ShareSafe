@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Shared Files - ShareSafe</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0A192F;
+color:white;
+}
+
+.navbar{
+background:#112240;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#64FFDA;
+}
+
+.nav-menu a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+.page-title{
+text-align:center;
+margin-bottom:40px;
+font-size:36px;
+}
+
+.files-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+.file-card{
+background:#112240;
+padding:25px;
+border-radius:15px;
+}
+
+.file-card h3{
+margin-bottom:15px;
+color:#64FFDA;
+}
+
+.info{
+margin-bottom:10px;
+}
+
+.active{
+color:#00ff88;
+font-weight:bold;
+}
+
+.expired{
+color:#ff4d4d;
+font-weight:bold;
+}
+
+.btn{
+display:block;
+margin-top:20px;
+padding:12px;
+text-align:center;
+text-decoration:none;
+background:#64FFDA;
+color:#0A192F;
+font-weight:bold;
+border-radius:10px;
+}
+
+</style>
+</head>
+<body>
+
+<header class="navbar">
+
+<div class="logo">ShareSafe</div>
+
+<div class="nav-menu">
+<a href="home">Home</a>
+<a href="share">Share File</a>
+<a href="receive">Receive File</a>
+<a href="myfiles">My Files</a>
+</div>
+
+</header>
+
+<div class="container">
+
+<h1 class="page-title">
+My Shared Files
+</h1>
+
+<div class="files-grid">
+{% for file in files %}
+
+<div class="file-card">
+
+<h3>{{ file.file_name }}</h3>
+
+<div class="info">
+Status:
+
+{% if file.status == "active" %}
+<span class="active">Active</span>
+{% else %}
+<span class="expired">Expired</span>
+{% endif %}
+
+</div>
+
+
+
+<div class="info">
+Expiry: {{ file.expiry_time }}
+</div>
+
+<div class="info">
+Downloads: {{ file.download_count }}
+</div>
+
+<a href="/details/{{ file.token }}" class="btn">
+View Details
+</a>
+
+</div>
+
+{% endfor %}
+
+
+
+</div>
+
+</div>
+
+</body>
+</html>
