@@ -28,7 +28,7 @@ cipher = Fernet(FERNET_KEY)
 
 # token genration 
 def generate_token():
-    chars = string.ascii_uppercase + string.digit
+    chars = string.ascii_uppercase + string.digits
     return ''.join(random.choices(chars, k=7))
 
 # password genration 
